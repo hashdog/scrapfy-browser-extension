@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCRAPfy</title>
+  <link rel="stylesheet" href="styles/popup.css">
+  <script src="scripts/popup.js"></script>
+</head>
+
+<body>
+  <img src="icons/logo-scrapfy.svg" id="logo">
+  <div id="content">
+    <select id="lang-selector" class="lang-selector">
+        <option value="plain_text">Plain Text</option>
+        <option value="sh">Bash (shell)</option>
+        <option value="c_cpp">C++</option>
+        <option value="coffee">Coffee</option>
+        <option value="csharp">C#</option>
+        <option value="css">CSS</option>
+        <option value="golang">GO</option>
+        <option value="html">HTML</option>
+        <option value="html_ruby">HTML (Ruby)</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="json">JSON</option>
+        <option value="perl">Perl</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="sql">SQL</option>
+        <option value="stylus">Stylus</option>
+        <option value="xml">XML</option>
+        <option value="yaml">YAML</option>
+      </select>
+    <a href="#" id="create-btn" class="btn-create">
+        <span id="loading-text"><img src="icons/loading.gif"> Loading...</span>
+        <span id="create-text">Create Room</span>
+      </a>
+  </div>
+</body>
+
+</html>

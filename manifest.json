@@ -1,0 +1,71 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.3.0",
+  "author": "hashdog",
+  "homepage_url": "https://scrapfy.io",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "128": "icons/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/vendor/jquery.min.js",
+      "scripts/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "clipboardWrite",
+    "*://*/*",
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*",
+        "https://gist.github.com/*",
+        "https://stackoverflow.com/questions/*"
+      ],
+      "exclude_matches": [
+        "https://github.com/new*",
+        "https://github.com/organizations*",
+        "https://github.com/settings*",
+        "https://github.com/site*",
+        "https://github.com/about",
+        "https://github.com/blog",
+        "https://github.com/contact",
+        "https://github.com/explore",
+        "https://github.com/integrations",
+        "https://github.com/issues",
+        "https://github.com/notifications",
+        "https://github.com/pulls",
+        "https://github.com/security",
+        "https://github.com/stars"
+      ],
+      "js": [
+        "scripts/vendor/jquery.min.js",
+        "scripts/scrapper/github.js",
+        "scripts/scrapper/stackoverflow.js"
+      ],
+      "css": [
+        "styles/github.css",
+        "styles/stackoverflow.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon-19.png",
+      "38": "icons/icon-38.png"
+    },
+    "default_title": "__MSG_btnTooltip__",
+    "default_popup": "popup.html"
+  }
+}
+
+
