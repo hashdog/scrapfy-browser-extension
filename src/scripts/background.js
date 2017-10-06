@@ -44,35 +44,42 @@ function createSCRAPfyRoom(contentToSend) {
   });
 }
 
-function createSelectionContextMenu() {
-  ext.contextMenus.create({
-    type: 'normal',
-    title: 'Open in SCRAPfy',
-    contexts: ['selection'],
-    onclick: function () {
+// Create SelectionContextMenu
+ext.contextMenus.create({
+  type: 'normal',
+  title: 'Open in SCRAPfy',
+  contexts: ['selection'],
+  onclick: function () {
 
-      // Get the selection with getSelection() coz info.selectionText
-      // strip the \n, \t...
-      ext.tabs.executeScript({
-        code: 'window.getSelection().toString();'
-      }, function (obj) {
+    // Get the selection with getSelection() coz info.selectionText
+    // strip the \n, \t...
+    ext.tabs.executeScript({
+      code: 'window.getSelection().toString();'
+    }, function (obj) {
 
-        // Should never happen. So just in case of...
-        if (!obj[0] || '' === obj[0]) {
-          alert('No selection');
-          return false;
-        }
+      // Should never happen. So just in case of...
+      if (!obj[0] || '' === obj[0]) {
+        alert('No selection');
+        return false;
+      }
 
-        createSCRAPfyRoom(obj[0]);
-      });
-    }
-  });
-}
-
-createSelectionContextMenu();
+      createSCRAPfyRoom(obj[0]);
+    });
+  }
+});
 
 ext.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+  var timer;
+
+  var sendMessage = function () {
+    timer = setInterval(function () {
+      ext.tabs.sendMessage(tabId, { action: 'change' }).then(function (response) {
+        clearInterval(timer);
+      });
+    }, 200);
+  }
+
   if (changeInfo.status === 'complete') {
-    ext.tabs.sendMessage(tabId, { action: 'change' });
+    sendMessage();
   }
 });

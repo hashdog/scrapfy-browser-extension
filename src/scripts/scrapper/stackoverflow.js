@@ -4,6 +4,7 @@ var $ = require('./../vendor/jquery.min');
 // Helpers
 var _addLink = function () {
   var btnHtml = '<a href="https://scrapfy.io" class="scrapfy-link" target="_blank">open in SCRAPfy</a>';
+
   $('.scrapfy-link').remove();
   $('pre').prepend(btnHtml);
 
@@ -50,9 +51,10 @@ var _addLink = function () {
 };
 
 // Init
-ext.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+ext.runtime.onMessage.addListener(function (request) {
   if (request.action === 'change') {
-    _addLink();
+    setTimeout(function() {
+      _addLink();
+    }, 300);
   }
 });
-

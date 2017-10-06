@@ -62,7 +62,6 @@ function Extension () {
       this.browserAction = browser.browserAction
     }
   } catch (e) {}
-
 }
 
 module.exports = new Extension();
