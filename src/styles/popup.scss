@@ -5,31 +5,33 @@ body {
 
 #header {
   text-align: center;
-}
-#logo {
-  height: 30px;
-  margin-top: 5px;
+
+  #logo {
+    height: 30px;
+    margin-top: 5px;
+  }
 }
 
 #content {
   padding: 10px;
-}
-#loading {
-  display: none;
-  text-align: center;
-}
 
-.lang-selector {
-  display: block;
-  padding: 7px 27px;
-  font-size: 16px;
-  height: 38px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  width: 100%;
+  #loading {
+    display: none;
+    text-align: center;
+  }
+
+  .lang-selector {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    display: block;
+    font-size: 16px;
+    height: 38px;
+    line-height: 1.42857143;
+    padding: 7px 27px;
+    outline: none;
+    width: 100%;
+  }
 }
