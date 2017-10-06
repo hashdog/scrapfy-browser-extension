@@ -1,5 +1,5 @@
-import ext from "./utils/ext";
-import $ from "./vendor/jquery.min"
+var ext = require('./utils/ext');
+var $ = require('./vendor/jquery.min');
 
 // Copy the given string to the clipboard
 function copyTextToClipboard(text) {
@@ -25,23 +25,23 @@ function createSCRAPfyRoom(contentToSend) {
     data: JSON.stringify({ content: contentToSend }),
     dataType: 'json'
   })
-    .done(function (reponseData) {
-      if (!reponseData.url) {
-        alert('SCRAPfy error: bad response format by the server');
-        return false;
-      }
+  .done(function (reponseData) {
+    if (!reponseData.url) {
+      alert('SCRAPfy error: bad response format by the server');
+      return false;
+    }
 
-      // Copy the link into clipboard
-      copyTextToClipboard(reponseData.url);
+    // Copy the link into clipboard
+    copyTextToClipboard(reponseData.url);
 
-      // Open the room in new tab
-      ext.tabs.create({
-        url: reponseData.url
-      });
-    })
-    .fail(function () {
-      alert('SCRAPfy error: seems the server is unreachable for the moment');
+    // Open the room in new tab
+    ext.tabs.create({
+      url: reponseData.url
     });
+  })
+  .fail(function () {
+    alert('SCRAPfy error: seems the server is unreachable for the moment');
+  });
 }
 
 function createSelectionContextMenu() {

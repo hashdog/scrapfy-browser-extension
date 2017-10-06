@@ -1,10 +1,7 @@
+var ext = require('./../utils/ext');
+var $ = require('./../vendor/jquery.min');
 
-import ext from "./../utils/ext";
-import $ from "./../vendor/jquery.min"
-
-
-
-  // Helpers
+// Helpers
 var _addLink = function () {
   var btnHtml = '<a href="https://scrapfy.io" class="scrapfy-link" target="_blank">open in SCRAPfy</a>';
   $('.scrapfy-link').remove();

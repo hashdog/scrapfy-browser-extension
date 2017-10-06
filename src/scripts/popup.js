@@ -46,6 +46,10 @@ $(document).on('ready', function () {
         ext.tabs.create({
           url: data.url
         });
+
+        window.close();
+
+        return;
       });
     });
 });
