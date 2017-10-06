@@ -78,7 +78,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(`build/${target}/styles`));
 });
 
-gulp.task(manifest, () => {
+gulp.task('manifest', () => {
   return gulp.src('./manifest.json')
     .pipe(gulpif(!production, $.mergeJson({
       fileName: 'manifest.json',
