@@ -1,0 +1,92 @@
+[
+  {
+    "label": "Plain Text",
+    "value": "plain_text"
+  },
+  {
+    "label": "Bash (shell)",
+    "value": "sh"
+  },
+  {
+    "label": "C++",
+    "value": "c_cpp"
+  }
+  ,
+  {
+    "label": "Coffee",
+    "value": "coffee"
+  }
+  ,
+  {
+    "label": "C#",
+    "value": "csharp"
+  }
+  ,
+  {
+    "label": "CSS",
+    "value": "css"
+  },
+  {
+    "label": "GO",
+    "value": "go"
+  }
+  ,
+  {
+    "label": "HTML",
+    "value": "html"
+  }
+  ,
+  {
+    "label": "HTML (Ruby)",
+    "value": "html_ruby"
+  }
+  ,
+  {
+    "label": "Java",
+    "value": "java"
+  },
+  {
+    "label": "JavaScript",
+    "value": "javascript"
+  }
+  ,
+  {
+    "label": "JSON",
+    "value": "json"
+  }
+  ,
+  {
+    "label": "Perl",
+    "value": "perl"
+  }
+  ,
+  {
+    "label": "PHP",
+    "value": "php"
+  }
+  ,
+  {
+    "label": "Python",
+    "value": "python"
+  },
+  {
+    "label": "Ruby",
+    "value": "ruby"
+  },
+  {
+    "label": "SQL",
+    "value": "sql"
+  },
+  {
+    "label": "Stylus",
+    "value": "stylus"
+  },
+  {
+    "label": "XML",
+    "value": "xml"
+  },
+  {
+    "label": "YAML",
+    "value": "yaml"
+  }
+]

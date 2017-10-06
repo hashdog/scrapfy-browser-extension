@@ -1,58 +1,35 @@
- body {
-   background-color: #222;
-   width: 230px;
- }
+body {
+  background-color: #222;
+  width: 230px;
+}
 
- #logo {
-   height: 30px;
- }
+#header {
+  text-align: center;
+}
+#logo {
+  height: 30px;
+  margin-top: 5px;
+}
 
- #content {
-   padding: 10px;
-   border-top: 1px solid rgba(0, 0, 0, .5);
-   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
-   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
-   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
- }
+#content {
+  padding: 10px;
+}
+#loading {
+  display: none;
+  text-align: center;
+}
 
- .lang-selector {
-   display: block;
-   padding: 7px 27px;
-   font-size: 16px;
-   height: 38px;
-   line-height: 1.42857143;
-   color: #555;
-   background-color: #fff;
-   background-image: none;
-   border: 1px solid #ccc;
-   border-radius: 4px;
-   outline: none;
-   width: 100%;
- }
-
- .btn-create {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-   background-color: #f85d5d;
-   border-color: #de5454;
-   color: #fff;
-   display: block;
-   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-   font-size: 16px;
-   margin: 10px auto 5px auto;
-   outline: none;
-   padding: 10px 27px;
-   text-decoration: none;
-   text-align: center;
- }
-
- .btn-create:hover {
-   color: #fff;
-   background-color: #df5252;
-   border-color: #ca4848;
- }
-
- #loading-text {
-   display: none;
- }
+.lang-selector {
+  display: block;
+  padding: 7px 27px;
+  font-size: 16px;
+  height: 38px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+}
