@@ -5,13 +5,13 @@ import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import preprocessify from 'preprocessify';
-import gulpif from "gulp-if";
+import gulpif from 'gulp-if';
 
 const $ = require('gulp-load-plugins')();
 
-var production = process.env.NODE_ENV === "production";
-var target = process.env.TARGET || "chrome";
-var environment = process.env.NODE_ENV || "development";
+var production = process.env.NODE_ENV === 'production';
+var target = process.env.TARGET || 'chrome';
+var environment = process.env.NODE_ENV || 'development';
 
 var generic = JSON.parse(fs.readFileSync(`./config/${environment}.json`));
 var specific = JSON.parse(fs.readFileSync(`./config/${target}.json`));
@@ -19,18 +19,18 @@ var context = Object.assign({}, generic, specific);
 
 var manifest = {
   dev: {
-    "background": {
-      "scripts": [
-        "scripts/livereload.js",
-        "scripts/background.js"
+    background: {
+      scripts: [
+        'scripts/livereload.js',
+        'scripts/background.js'
       ]
     }
   },
 
   firefox: {
-    "applications": {
-      "gecko": {
-        "id": "my-app-id@mozilla.org"
+    applications: {
+      gecko: {
+        id: 'my-app-id@mozilla.org'
       }
     }
   }
@@ -78,7 +78,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(`build/${target}/styles`));
 });
 
-gulp.task("manifest", () => {
+gulp.task(manifest, () => {
   return gulp.src('./manifest.json')
     .pipe(gulpif(!production, $.mergeJson({
       fileName: 'manifest.json',
@@ -151,9 +151,9 @@ function buildJS(target) {
     .pipe(gulpif(!production, $.sourcemaps.init({ loadMaps: true }) ))
     .pipe(gulpif(!production, $.sourcemaps.write('./') ))
     .pipe(gulpif(production, $.uglify({
-      "mangle": false,
-      "output": {
-        "ascii_only": true
+      mangle: false,
+      output: {
+        ascii_only: true
       }
     })))
     .pipe(gulp.dest(`build/${target}/scripts`));
