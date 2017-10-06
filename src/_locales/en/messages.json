@@ -1,11 +1,11 @@
 {
   "appName": {
-    "message": "SCRAPfy",
-    "description": "SCRAPfy"
+    "message": "SCRAPfy: Collaborative code editor for ninjas",
+    "description": "SCRAPfy: Collaborative code editor for ninjas"
   },
   "appDescription": {
-    "message": "A collaborative code editor for ninjas.",
-    "description": "A collaborative code editor for ninjas."
+    "message": "Share your code in real-time with other developers.",
+    "description": "Share your code in real-time with other developers."
   },
   "btnTooltip": {
     "message": "SCRAPfy",
