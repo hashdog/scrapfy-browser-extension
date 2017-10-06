@@ -18,7 +18,6 @@ $(document).on('ready', function () {
   if (lastLangStr !== null && lastLangStr !== 'plain_text') {
     $langSelector
       .prepend('<option value="-">------</option>')
-      .prepend('<option value="plain_text">Plain Text</option>')
       .prepend('<option value="' + lastLangObj.value + '">' + lastLangObj.label + '</option>');
   }
 
