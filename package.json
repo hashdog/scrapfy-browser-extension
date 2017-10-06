@@ -1,7 +1,7 @@
 {
   "name": "scrapfy-browser-extension",
   "version": "0.0.2",
-  "description": "A collaborative code editor for ninjas.",
+  "description": "Share your code in real-time with other developers.",
   "scripts": {
     "chrome-build": "cross-env TARGET=chrome gulp",
     "opera-build": "cross-env TARGET=opera gulp",
