@@ -2,6 +2,7 @@
 
 This is our browser extension code.
 
+
 ## Features
 - Open a SCRAPfy room from SctackOverflow snippets and partially (yet) from GitHub
 - Button to open a SCRAPfy room by selecting the language
