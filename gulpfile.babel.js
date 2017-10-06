@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from 'fs';
 import gulp from 'gulp';
 import {merge} from 'event-stream'
 import browserify from 'browserify';
@@ -48,7 +48,7 @@ gulp.task('build', (cb) => {
 gulp.task('watch', ['build'], () => {
   $.livereload.listen();
 
-  gulp.watch(['./src/**/*']).on("change", () => {
+  gulp.watch(['./src/**/*']).on('change', () => {
     $.runSequence('build', $.livereload.reload);
   });
 });
@@ -81,13 +81,13 @@ gulp.task('styles', () => {
 gulp.task("manifest", () => {
   return gulp.src('./manifest.json')
     .pipe(gulpif(!production, $.mergeJson({
-      fileName: "manifest.json",
-      jsonSpace: " ".repeat(4),
+      fileName: 'manifest.json',
+      jsonSpace: ' '.repeat(4),
       endObj: manifest.dev
     })))
-    .pipe(gulpif(target === "firefox", $.mergeJson({
-      fileName: "manifest.json",
-      jsonSpace: " ".repeat(4),
+    .pipe(gulpif(target === 'firefox', $.mergeJson({
+      fileName: 'manifest.json',
+      jsonSpace: ' '.repeat(4),
       endObj: manifest.firefox
     })))
     .pipe(gulp.dest(`./build/${target}`))
@@ -140,7 +140,7 @@ function buildJS(target) {
       entries: 'src/scripts/' + file,
       debug: true
     })
-    .transform('babelify', { presets: ['es2015'] })
+    .transform('babelify', { presets: ['env'] })
     .transform(preprocessify, {
       includeExtensions: ['.js'],
       context: context
@@ -150,11 +150,11 @@ function buildJS(target) {
     .pipe(buffer())
     .pipe(gulpif(!production, $.sourcemaps.init({ loadMaps: true }) ))
     .pipe(gulpif(!production, $.sourcemaps.write('./') ))
-    .pipe(gulpif(production, $.uglify({ 
+    .pipe(gulpif(production, $.uglify({
       "mangle": false,
       "output": {
         "ascii_only": true
-      } 
+      }
     })))
     .pipe(gulp.dest(`build/${target}/scripts`));
   });
