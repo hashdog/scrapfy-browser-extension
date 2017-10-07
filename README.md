@@ -1,5 +1,10 @@
 # SCRAPfy browser extension
 
+[![GitHub tag](https://img.shields.io/github/tag/hashdog/scrapfy-browser-extension.svg?style=flat-square)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/emackoodkdoeflcpjfbdljlfckgbmnae.svg?style=flat-square)](https://chrome.google.com/webstore/detail/scrapfy/emackoodkdoeflcpjfbdljlfckgbmnae)
+[![Mozilla Add-on](https://img.shields.io/amo/v/scrapfy-shared-code-editor.svg?style=flat-square)](https://addons.mozilla.org/addon/scrapfy-shared-code-editor)
+
+
 This is our browser extension code for Chrome, Firefox and Opera browsers.
 
 
