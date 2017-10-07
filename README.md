@@ -1,6 +1,6 @@
 # SCRAPfy browser extension
 
-This is our browser extension code.
+This is our browser extension code for Chrome, Firefox and Opera browsers.
 
 
 ## Features
@@ -11,6 +11,10 @@ This is our browser extension code.
 
 ## Install from Chrome Web Store
 https://chrome.google.com/webstore/detail/scrapfy/emackoodkdoeflcpjfbdljlfckgbmnae
+
+
+## Install from Add-ons for Firefox
+https://addons.mozilla.org/addon/scrapfy-shared-code-editor
 
 
 ## Load the extension in Chrome & Opera
