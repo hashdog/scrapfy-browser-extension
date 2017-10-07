@@ -30,7 +30,7 @@ var manifest = {
   firefox: {
     applications: {
       gecko: {
-        id: 'my-app-id@mozilla.org'
+        id: 'scrapfy-firefox-addon@hashdog.com'
       }
     }
   }
