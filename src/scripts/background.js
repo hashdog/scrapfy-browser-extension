@@ -69,15 +69,26 @@ ext.contextMenus.create({
 });
 
 ext.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+  
+  // @if extension == 'firefox'  
   var timer;
-
   var sendMessage = function () {
     timer = setInterval(function () {
-      ext.tabs.sendMessage(tabId, { action: 'change' }).then(function (response) {
+      ext.tabs.sendMessage(tabId, {
+        action: 'change'
+      }).then(function (response) {
         clearInterval(timer);
       });
     }, 200);
   }
+  // @endif
+
+  // @if extension == 'chrome'
+  var sendMessage = function () {
+    ext.tabs.sendMessage(tabId, { action: 'change' });
+  }
+  // @endif
+
 
   if (changeInfo.status === 'complete') {
     sendMessage();
