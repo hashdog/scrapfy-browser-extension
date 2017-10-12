@@ -5,13 +5,15 @@
 [![Mozilla Add-on](https://img.shields.io/amo/v/scrapfy-shared-code-editor.svg?style=flat-square)](https://addons.mozilla.org/addon/scrapfy-shared-code-editor)
 
 
-This is our browser extension code for Chrome, Firefox and Opera browsers.
+This is our browser extension code for Chrome, Firefox and Opera.
 
 
 ## Features
-- Open a SCRAPfy room from SctackOverflow snippets and partially (yet) from GitHub
-- Button to open a SCRAPfy room by selecting the language
-- Context menu to open a SCRAPfy room with the selected text
+Open a SCRAPfy room from:
+
+- Snippets in SctackOverflow and partially (yet) GitHub
+- Chrome|Opera|FF Menu by selecting a language
+- Context menu by selecting some text
 
 
 ## Install from Chrome Web Store
