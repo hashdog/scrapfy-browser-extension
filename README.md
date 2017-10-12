@@ -12,7 +12,7 @@ This is our browser extension code for Chrome, Firefox and Opera.
 Open a SCRAPfy room from:
 
 - Snippets in SctackOverflow and partially (yet) GitHub
-- Chrome|Opera|FF Menu by selecting a language
+- Toolbar button by selecting a language
 - Context menu by selecting some text
 
 
