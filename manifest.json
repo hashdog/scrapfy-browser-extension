@@ -12,7 +12,6 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/vendor/jquery.min.js",
       "scripts/background.js"
     ]
   },

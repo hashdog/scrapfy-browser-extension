@@ -4,10 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCRAPfy</title>
-    <link rel="stylesheet" href="styles/popup.css">
-    <script src="scripts/popup.js"></script>
-  </head>
+    <style>
+      body {
+        background-color: #222;
+        width: 230px;
+        height: 92px;
+      }
 
+      #header {
+        text-align: center;
+      }
+      #logo {
+        height: 30px;
+        margin-top: 5px;
+      }
+
+      #content {
+        padding: 10px;
+      }
+      #loading {
+        display: none;
+        padding-top: 10px;
+        text-align: center;
+      }
+      #lang-selector {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #555;
+        display: block;
+        font-size: 16px;
+        height: 38px;
+        line-height: 1.42857143;
+        padding: 7px 27px;
+        outline: none;
+        width: 100%;
+      }
+    </style>
+  </head>
   <body>
     <header id="header">
       <img src="icons/logo-scrapfy.svg" id="logo">
@@ -16,7 +51,10 @@
       <div id="loading">
         <img src="icons/loading.gif">
       </div>
-      <select id="lang-selector" class="lang-selector"></select>
+      <select id="lang-selector">
+        <option value="">Select a lang...</option>
+      </select>
     </div>
+    <script src="scripts/popup.js"></script>
   </body>
 </html>

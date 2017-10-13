@@ -1,5 +1,5 @@
-var ext = require('./utils/ext');
 var $ = require('./vendor/jquery.min');
+var ext = require('./utils/ext');
 var langs = require('./langs');
 
 $(document).on('ready', function () {
@@ -10,29 +10,31 @@ $(document).on('ready', function () {
 
   var $langSelector = $('#lang-selector');
 
+  // Set the last lang selected
+  if (lastLangStr !== null && lastLangStr !== 'plain_text') {
+    $langSelector
+      .append('<option value="' + lastLangObj.value + '">' + lastLangObj.label + '</option>')
+      .append('<option value="--">------</option>');
+  }
+
   langs.forEach(function(lang) {
     $langSelector.append('<option value="' + lang.value + '">' + lang.label + '</option>');
   });
 
-  // Set the last lang selected
-  if (lastLangStr !== null && lastLangStr !== 'plain_text') {
-    $langSelector
-      .prepend('<option value="-">------</option>')
-      .prepend('<option value="' + lastLangObj.value + '">' + lastLangObj.label + '</option>');
-  }
+  $langSelector.on('change', function() {
 
-  $langSelector
-    .prepend('<option value="">Select a lang...</option>')
-    .val('')
-    .on('change', function() {
-      $('#loading').show();
-      $langSelector.hide();
+    // Get and save the selected lang
+    var lang = $langSelector.val();
 
-      // Get and save the selected lang
-      var lang = $langSelector.val();
+    if (lang === '--') {
+      $langSelector.val('');
+    } else {
       if (lang != lastLangStr) {
         localStorage.setItem('lastLang', lang);
       }
+
+      $langSelector.hide();
+      $('#loading').show();
 
       // Get the SCRAP data and open the new tab
       $.ajax({
@@ -43,13 +45,10 @@ $(document).on('ready', function () {
         dataType: 'json'
       })
       .done(function(data) {
-        ext.tabs.create({
-          url: data.url
-        });
-
         window.close();
-
+        ext.tabs.create({ url: data.url });
         return;
       });
-    });
+    }
+  });
 });
