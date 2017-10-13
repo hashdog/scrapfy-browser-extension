@@ -128,11 +128,9 @@ function mergeAll(dest) {
 function buildJS(target) {
   const files = [
     'vendor/jquery.min.js',
-    'scrapper/github.js',
-    'scrapper/stackoverflow.js',
+    'scrapper/scrapfy-link.js',
     'background.js',
-    'popup.js',
-    'livereload.js'
+    'popup.js'
   ]
 
   let tasks = files.map( file => {

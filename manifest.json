@@ -27,27 +27,11 @@
         "https://github.com/*",
         "https://gist.github.com/*"
       ],
-      "exclude_matches": [
-        "https://github.com/new*",
-        "https://github.com/organizations*",
-        "https://github.com/settings*",
-        "https://github.com/site*",
-        "https://github.com/about",
-        "https://github.com/blog",
-        "https://github.com/contact",
-        "https://github.com/explore",
-        "https://github.com/integrations",
-        "https://github.com/issues",
-        "https://github.com/notifications",
-        "https://github.com/pulls",
-        "https://github.com/security",
-        "https://github.com/stars"
-      ],
       "css": [
-        "styles/github.css"
+        "styles/scrapfy-link.css"
       ],
       "js": [
-        "scripts/scrapper/github.js"
+        "scripts/scrapper/scrapfy-link.js"
       ]
     },
     {
@@ -55,10 +39,10 @@
         "https://stackoverflow.com/questions/*"
       ],
       "css": [
-        "styles/stackoverflow.css"
+        "styles/scrapfy-link.css"
       ],
       "js": [
-        "scripts/scrapper/stackoverflow.js"
+        "scripts/scrapper/scrapfy-link.js"
       ]
     }
   ],
