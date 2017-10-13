@@ -45,8 +45,8 @@ $(document).on('ready', function () {
         dataType: 'json'
       })
       .done(function(data) {
-        window.close();
         ext.tabs.create({ url: data.url });
+        window.close();
         return;
       });
     }

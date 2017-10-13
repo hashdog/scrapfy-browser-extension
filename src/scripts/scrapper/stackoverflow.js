@@ -1,10 +1,11 @@
-var ext = require('./../utils/ext');
-var $ = require('./../vendor/jquery.min');
+var $ = require('../vendor/jquery.min');
+var ext = require('../utils/ext');
+
+var scrapfyLogo = ext.extension.getURL('icons/icon-19.png');
+var btnHtml = '<a href="https://scrapfy.io" class="scrapfy-link" target="_blank" title="Open in SCRAPfy"><img src="' + scrapfyLogo + '"></a>';
 
 // Helpers
-var _addLink = function () {
-  var btnHtml = '<a href="https://scrapfy.io" class="scrapfy-link" target="_blank">open in SCRAPfy</a>';
-
+var addLink = function () {
   $('.scrapfy-link').remove();
   $('pre').prepend(btnHtml);
 
@@ -33,7 +34,7 @@ var _addLink = function () {
       dataType: 'json'
     })
     .done(function (reponseData) {
-      $this.text('open in SCRAPfy');
+      $this.html(btnHtml);
 
       if(!reponseData.url) {
         alert('SCRAPfy error: bad response format by the server');
@@ -44,17 +45,21 @@ var _addLink = function () {
       window.open(reponseData.url);
     })
     .fail(function () {
-      $this.text('open in SCRAPfy');
+      $this.html(btnHtml);
       alert('SCRAPfy error: seems the server is unreachable for the moment');
     });
   });
 };
 
 // Init
-ext.runtime.onMessage.addListener(function (request) {
-  if (request.action === 'change') {
-    setTimeout(function() {
-      _addLink();
-    }, 300);
+$(document).on('ready', function () {
+  if (document.readyState === 'complete') {
+    addLink();
+  } else {
+    document.onreadystatechange = function () {
+      if (document.readyState === 'complete') {
+        addLink();
+      }
+    };
   }
 });

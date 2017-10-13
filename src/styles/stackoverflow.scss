@@ -1,6 +1,13 @@
 .scrapfy-link {
-  border-width: 1px;
-  color: #f85d5d !important;
   float: right;
-  font-size: 11px;
+
+  img {
+    height: 19px;
+    width: 19px;
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

@@ -25,8 +25,7 @@
     {
       "matches": [
         "https://github.com/*",
-        "https://gist.github.com/*",
-        "https://stackoverflow.com/questions/*"
+        "https://gist.github.com/*"
       ],
       "exclude_matches": [
         "https://github.com/new*",
@@ -44,17 +43,23 @@
         "https://github.com/security",
         "https://github.com/stars"
       ],
+      "css": [
+        "styles/github.css"
+      ],
       "js": [
-        "scripts/vendor/jquery.min.js",
-        "scripts/scrapper/github.js",
-        "scripts/scrapper/stackoverflow.js"
+        "scripts/scrapper/github.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://stackoverflow.com/questions/*"
       ],
       "css": [
-        "styles/github.css",
         "styles/stackoverflow.css"
       ],
-      "run_at": "document_idle",
-      "all_frames": false
+      "js": [
+        "scripts/scrapper/stackoverflow.js"
+      ]
     }
   ],
   "browser_action": {
@@ -64,7 +69,10 @@
     },
     "default_title": "__MSG_btnTooltip__",
     "default_popup": "popup.html"
-  }
+  },
+  "web_accessible_resources": [
+    "icons/icon-19.png"
+  ]
 }
 
 
